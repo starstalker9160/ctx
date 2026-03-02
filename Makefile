@@ -1,2 +1,7 @@
-app: ./src/main.cpp
-	clang++ -std=c++20 ./src/main.cpp -o ./builds/app
+CXX ?= g++
+CXXFLAGS := -std=c++20
+SRC := ./src/main.cpp
+OUT := ./builds/app
+
+app: $(SRC)
+	$(CXX) $(CXXFLAGS) $(SRC) -o $(OUT)
